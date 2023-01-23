@@ -1,0 +1,1026 @@
+[
+  {
+    "type": "_directive",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "balance",
+        "named": true
+      },
+      {
+        "type": "close",
+        "named": true
+      },
+      {
+        "type": "commodity",
+        "named": true
+      },
+      {
+        "type": "custom",
+        "named": true
+      },
+      {
+        "type": "document",
+        "named": true
+      },
+      {
+        "type": "event",
+        "named": true
+      },
+      {
+        "type": "note",
+        "named": true
+      },
+      {
+        "type": "open",
+        "named": true
+      },
+      {
+        "type": "pad",
+        "named": true
+      },
+      {
+        "type": "price",
+        "named": true
+      },
+      {
+        "type": "query",
+        "named": true
+      },
+      {
+        "type": "transaction",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_pragma",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "include",
+        "named": true
+      },
+      {
+        "type": "option",
+        "named": true
+      },
+      {
+        "type": "plugin",
+        "named": true
+      },
+      {
+        "type": "popmeta",
+        "named": true
+      },
+      {
+        "type": "poptag",
+        "named": true
+      },
+      {
+        "type": "pushmeta",
+        "named": true
+      },
+      {
+        "type": "pushtag",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "account",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "amount",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "currency",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "balance",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "amount",
+          "named": true
+        },
+        {
+          "type": "currency",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bool",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "close",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "commodity",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "currency",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cost",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "currency",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "merge",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "currency",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "custom",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "currency",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "none",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "document",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "filename",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "event",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "flag",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "header",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "include",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ledger",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "_directive",
+          "named": true
+        },
+        {
+          "type": "_pragma",
+          "named": true
+        },
+        {
+          "type": "header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "meta",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "key",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "note",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "note",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "open",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "booking",
+          "named": true
+        },
+        {
+          "type": "currency",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "option",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pad",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "plugin",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "popmeta",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "key",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "poptag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "posting",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "amount",
+          "named": true
+        },
+        {
+          "type": "cost",
+          "named": true
+        },
+        {
+          "type": "flag",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "price",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "price",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "amount",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pushmeta",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "key",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pushtag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "query",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bql",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "name",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "transaction",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "flag",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "meta",
+          "named": true
+        },
+        {
+          "type": "narration",
+          "named": true
+        },
+        {
+          "type": "payee",
+          "named": true
+        },
+        {
+          "type": "posting",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account",
+          "named": true
+        },
+        {
+          "type": "amount",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "currency",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "none",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "@",
+    "named": false
+  },
+  {
+    "type": "@@",
+    "named": false
+  },
+  {
+    "type": "FALSE",
+    "named": false
+  },
+  {
+    "type": "TRUE",
+    "named": false
+  },
+  {
+    "type": "balance",
+    "named": false
+  },
+  {
+    "type": "booking",
+    "named": true
+  },
+  {
+    "type": "bql",
+    "named": true
+  },
+  {
+    "type": "close",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "commodity",
+    "named": false
+  },
+  {
+    "type": "custom",
+    "named": false
+  },
+  {
+    "type": "date",
+    "named": true
+  },
+  {
+    "type": "document",
+    "named": false
+  },
+  {
+    "type": "event",
+    "named": false
+  },
+  {
+    "type": "filename",
+    "named": true
+  },
+  {
+    "type": "include",
+    "named": false
+  },
+  {
+    "type": "key",
+    "named": true
+  },
+  {
+    "type": "link",
+    "named": true
+  },
+  {
+    "type": "merge",
+    "named": true
+  },
+  {
+    "type": "name",
+    "named": true
+  },
+  {
+    "type": "narration",
+    "named": true
+  },
+  {
+    "type": "none",
+    "named": true
+  },
+  {
+    "type": "note",
+    "named": false
+  },
+  {
+    "type": "number",
+    "named": true
+  },
+  {
+    "type": "open",
+    "named": false
+  },
+  {
+    "type": "option",
+    "named": false
+  },
+  {
+    "type": "pad",
+    "named": false
+  },
+  {
+    "type": "payee",
+    "named": true
+  },
+  {
+    "type": "plugin",
+    "named": false
+  },
+  {
+    "type": "popmeta",
+    "named": false
+  },
+  {
+    "type": "poptag",
+    "named": false
+  },
+  {
+    "type": "pushmeta",
+    "named": false
+  },
+  {
+    "type": "pushtag",
+    "named": false
+  },
+  {
+    "type": "query",
+    "named": false
+  },
+  {
+    "type": "string",
+    "named": true
+  },
+  {
+    "type": "tag",
+    "named": true
+  },
+  {
+    "type": "txn",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "{{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  },
+  {
+    "type": "}}",
+    "named": false
+  },
+  {
+    "type": "~",
+    "named": false
+  }
+]

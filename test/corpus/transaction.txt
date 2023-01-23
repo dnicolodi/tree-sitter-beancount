@@ -1,0 +1,353 @@
+===
+transaction
+===
+
+2013-05-18 *
+  Expenses:Test  1.00 USD
+  Assets:Cash   -1.00 USD
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)))
+    (posting (account) (amount (number) (currency)))))
+
+===
+transaction narration
+===
+
+2013-05-18 * "Test"
+  Expenses:Test  1.00 USD
+  Assets:Cash   -1.00 USD
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (narration)
+    (posting (account) (amount (number) (currency)))
+    (posting (account) (amount (number) (currency)))))
+
+===
+transaction payee and narration
+===
+
+2013-05-20 * "Test" "Test"
+  Expenses:Test  1.00 USD
+  Assets:Cash   -1.00 USD
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (payee)
+    (narration)
+    (posting (account) (amount (number) (currency)))
+    (posting (account) (amount (number) (currency)))))
+
+===
+transaction no postings
+===
+
+2013-05-20 * "Foo"
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (narration)))
+
+===
+transaction link and tag
+===
+
+2014-04-20 * "Test" ^link #tag
+  Expenses:Test  1.00 USD
+  Assets:Cash   -1.00 USD
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (narration)
+    (link)
+    (tag)
+    (posting (account) (amount (number) (currency)))
+    (posting (account) (amount (number) (currency)))))
+
+===
+transaction more links and tags
+===
+
+2014-04-20 * "Test" ^link #tag
+  ^link
+  #tag
+  Expenses:Test  1.00 USD
+  Assets:Cash   -1.00 USD
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (narration)
+    (link)
+    (tag)
+    (link)
+    (tag)
+    (posting (account) (amount (number) (currency)))
+    (posting (account) (amount (number) (currency)))))
+
+===
+transaction meta
+===
+
+2014-04-20 * "Test"
+  test: TRUE
+  #tag
+  ^link
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (narration)
+    (meta (key) (value (bool)))
+    (tag)
+    (link)))
+    
+===
+transaction price
+===
+
+2014-04-20 *
+  Equity:Tests  1 TEST @ 10.00 USD
+  Assets:Cash
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (price (amount (number) (currency))))
+    (posting (account))))
+
+===
+transaction cost
+===
+
+2014-04-20 *
+  Equity:Tests  1 TEST {10.00 USD}
+  Assets:Cash
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (cost (number) (currency)))
+    (posting (account))))
+
+===
+transaction cost empty
+===
+
+2014-01-01 *
+  Assets:Invest:AAPL   20 AAPL {}
+  Assets:Cash
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (cost))
+    (posting (account))))
+
+===
+transaction cost date
+===
+
+2014-01-01 *
+  Assets:Invest:AAPL   20 AAPL {2014-12-26}
+  Assets:Cash
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (cost (date)))
+    (posting (account))))
+
+===
+transaction cost label
+===
+
+2014-01-01 *
+  Assets:Invest:AAPL   20 AAPL {"label"}
+  Assets:Cash
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (cost (string)))
+    (posting (account))))
+
+===
+transaction cost merge
+===
+
+2014-01-01 *
+  Assets:Invest:AAPL   20 AAPL {*}
+  Assets:Cash
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (cost (merge)))
+    (posting (account))))
+
+===
+transaction cost two components
+===
+
+2014-01-01 *
+  Assets:Invest:AAPL    1 AAPL {45.23 USD, 2014-12-26}
+  Assets:Invest:AAPL    1 AAPL {2014-12-26, 45.23 USD}
+  Assets:Invest:AAPL    1 AAPL {45.23 USD, "d82d55a0dbe8"}
+  Assets:Invest:AAPL    1 AAPL {"d82d55a0dbe8", 45.23 USD}
+  Assets:Invest:AAPL    1 AAPL {2014-12-26, "d82d55a0dbe8"}
+  Assets:Invest:AAPL    1 AAPL {"d82d55a0dbe8", 2014-12-26}
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (cost (number) (currency) (date)))
+    (posting (account) (amount (number) (currency)) (cost (date) (number) (currency)))
+    (posting (account) (amount (number) (currency)) (cost (number) (currency) (string)))
+    (posting (account) (amount (number) (currency)) (cost (string) (number) (currency)))
+    (posting (account) (amount (number) (currency)) (cost (date) (string)))
+    (posting (account) (amount (number) (currency)) (cost (string) (date)))))
+
+===
+transaction cost three components
+===
+
+2014-01-01 *
+  Assets:Invest:AAPL    1 AAPL {45.23 USD, 2014-12-26, "d82d55a0dbe8"}
+  Assets:Invest:AAPL    1 AAPL {2014-12-26, 45.23 USD, "d82d55a0dbe8"}
+  Assets:Invest:AAPL    1 AAPL {45.23 USD, "d82d55a0dbe8", 2014-12-26}
+  Assets:Invest:AAPL    1 AAPL {2014-12-26, "d82d55a0dbe8", 45.23 USD}
+  Assets:Invest:AAPL    1 AAPL {"d82d55a0dbe8", 45.23 USD, 2014-12-26}
+  Assets:Invest:AAPL    1 AAPL {"d82d55a0dbe8", 2014-12-26, 45.23 USD}
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (cost (number) (currency) (date) (string)))
+    (posting (account) (amount (number) (currency)) (cost (date) (number) (currency) (string)))
+    (posting (account) (amount (number) (currency)) (cost (number) (currency) (string) (date)))
+    (posting (account) (amount (number) (currency)) (cost (date) (string) (number) (currency)))
+    (posting (account) (amount (number) (currency)) (cost (string) (number) (currency) (date)))
+    (posting (account) (amount (number) (currency)) (cost (string) (date) (number) (currency)))))
+
+===
+transaction cost both
+===
+
+2014-01-01 *
+  Assets:Invest:AAPL   10 AAPL {45.23 # 9.95 USD}
+  Assets:Cash
+
+---
+
+(ledger
+  (transaction
+  (date)
+  (flag)
+  (posting (account) (amount (number) (currency)) (cost (number) (number) (currency)))
+  (posting (account))))
+
+===
+transaction cost total only
+===
+
+2014-01-01 *
+  Assets:Invest:AAPL      10 AAPL {# 9.95 USD}
+  Assets:Cash
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (cost (number) (currency)))
+    (posting (account))))
+
+===
+transaction cost total empty
+===
+
+2014-01-01 *
+  Assets:Invest:AAPL      20 AAPL {45.23 # USD}
+  Assets:Cash
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (cost (number) (currency)))
+    (posting (account))))
+
+===
+transaction cost just currency
+===
+
+2014-01-01 *
+  Assets:Invest:AAPL   20 AAPL {USD}
+  Assets:Invest:AAPL   20 AAPL { # USD}
+  Assets:Cash
+
+---
+
+(ledger
+  (transaction
+    (date)
+    (flag)
+    (posting (account) (amount (number) (currency)) (cost (currency)))
+    (posting (account) (amount (number) (currency)) (cost (currency)))
+    (posting (account))))
